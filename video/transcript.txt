@@ -1,0 +1,17 @@
+A lesson cannot help someone who cannot reach it. Many learners share one old phone, buy data in 
+small bundles, and often have no signal at home. And research shows that sending practice alone is 
+not enough: learners improve when a teacher follows up. Lesson Parcel does both. The teacher writes 
+a short lesson in this web page. For each wrong answer, they can add a hint about the mistake 
+behind it. Download, and the whole lesson is one file of about 18 kilobytes. It goes out in the 
+class chat or by Bluetooth. The learner switches on airplane mode. The lesson still opens. It can 
+read aloud, and several learners can share one phone. A wrong answer gets the hint for that exact 
+answer, not the solution. The explanation comes after a second try. At the end: a first-try score, 
+and practice for the questions they missed. High contrast and larger text are one tap away, and the 
+lesson is built for keyboards and screen readers. Then the learner gets a short code and sends it 
+by plain SMS. No data needed. The teacher pastes the messages. Typos are caught, and the class 
+table shows what was hard. Then the follow-up plan: learners grouped by the wrong answer they 
+chose, each group with a one-SMS message about its own mistake. Copy, send, done. The teacher knows 
+whom to help, and with what. Lesson Parcel: one lesson, one tiny file, and a way back to the 
+teacher. Free, open source, and tested offline.
+
+(Transcript of the Lesson Parcel demo video, about 2 minutes. Captions: captions.srt)

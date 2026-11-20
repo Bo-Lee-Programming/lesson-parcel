@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesson Parcel — lessons that travel like a text message</title>
+<meta name="description" content="Write a short lesson, export it as one small offline HTML file, and read your class's progress codes sent back by SMS.">
+<link rel="icon" href="data:,">
+<script src="parcel.js"></script>
+<script>(function () { var s = document.createElement('style'); s.textContent = LP_CSS; document.head.appendChild(s); })();</script>
+<style>
+body{max-width:52rem}
+#sampleSel{width:14rem;max-width:100%}
+textarea{font:inherit;width:100%;min-height:4.5em;background:var(--bg);color:var(--fg);border:2px solid var(--line);border-radius:6px;padding:.4rem}
+input[type=text],input[type=tel]{width:100%}
+.grid{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(12rem,1fr))}
+.field{display:flex;flex-direction:column;gap:.2rem;margin:.6rem 0}
+.hint{font-size:.85em;color:var(--muted)}
+.step h3{margin:0 0 .4rem;font-size:1.05em}
+.err{color:var(--bad)}
+table{border-collapse:collapse;width:100%;margin:.6rem 0}
+th,td{border:1px solid var(--line);padding:.3rem .5rem;text-align:center}
+th[scope=row]{text-align:left}
+caption{text-align:left;font-weight:700;padding:.3rem 0}
+dialog{width:min(44rem,96vw);height:min(90vh,60rem);padding:0;border:2px solid var(--line);border-radius:10px}
+dialog iframe{width:100%;height:calc(100% - 3.5rem);border:0}
+dialog .bar{padding:.4rem .6rem;margin:0;border-bottom:1px solid var(--line)}
+.steps3{display:grid;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr));gap:.8rem;margin:1rem 0;padding:0;list-style:none;counter-reset:s}
+.steps3 li{border:2px solid var(--line);border-radius:10px;padding:.7rem .9rem;counter-increment:s}
+.steps3 li::before{content:counter(s);display:inline-grid;place-items:center;width:1.8em;height:1.8em;border-radius:50%;background:var(--accent);color:var(--accent-fg);font-weight:700;margin-right:.5rem}
+.steps3 strong{font-size:1.05em}
+.cta{font-size:1.1em;padding:.5rem 1.2rem}
+.hints{border:1px dashed var(--line);border-radius:8px;margin:.6rem 0;padding:.3rem .8rem}
+.fu{border-top:1px solid var(--line);padding-top:.4rem;margin-top:.6rem}.fu h4{margin:.3rem 0}
+.msg{background:rgba(11,87,208,.07);border-left:4px solid var(--accent);padding:.4rem .6rem;margin:.3rem 0}
+</style>
+</head>
+<body>
+<a class="skip" href="#write">Skip to the lesson editor</a>
+<header>
+  <h1>Lesson Parcel</h1>
+  <p>Homework that reaches learners with no data, and tells you who needs help with what.</p>
+  <ol class="steps3" aria-label="How it works">
+    <li><strong>Write a 10-minute lesson</strong><br><span class="hint">Short reading parts and questions, plus a hint for each wrong answer.</span></li>
+    <li><strong>Forward one small file</strong><br><span class="hint">About 18 KB, by WhatsApp, Bluetooth or USB. It works with no internet on an old, shared phone, and can read aloud.</span></li>
+    <li><strong>Get codes back by SMS</strong><br><span class="hint">Paste the messages here: see the class, and get a ready-to-send follow-up for each group of mistakes.</span></li>
+  </ol>
+  <div class="bar"><button type="button" id="tryLearner" class="cta">Try a lesson as a learner</button><span class="hint">Opens the lesson below exactly as a learner sees it.</span></div>
+  <div class="bar" role="group" aria-label="Lesson files">
+    <button type="button" id="newLesson" class="ghost">New lesson</button>
+    <label for="sampleSel">Sample</label>
+    <select id="sampleSel"></select>
+    <button type="button" id="loadSample" class="ghost">Load sample</button>
+    <label class="ghost" for="openFile">Open a lesson file:</label>
+    <input type="file" id="openFile" accept=".html,text/html">
+  </div>
+  <!--online-only-->
+  <details>
+    <summary>Get the files (try a lesson, or use the editor offline)</summary>
+    <ul>
+      <li>Sample lessons to send to a phone: <a href="lessons/frac-lesson.html" download>Equivalent fractions</a> (English, 18 KB) · <a href="lessons/water-lesson.html" download>The water cycle</a> (English, 18 KB) · <a href="lessons/foto-lesson.html" download>La fotosíntesis</a> (Spanish, 18 KB). Or open them here: <a href="lessons/frac-lesson.html">fractions</a>, <a href="lessons/water-lesson.html">water cycle</a>, <a href="lessons/foto-lesson.html">fotosíntesis</a>.</li>
+      <li><a href="lesson-parcel-editor.html" download>Offline editor</a>: this whole page in one file. Save it once, then write lessons and read codes with no internet.</li>
+    </ul>
+  </details>
+  <!--/online-only-->
+  <p id="status" role="status"></p>
+</header>
+
+<main>
+<section id="write" aria-labelledby="writeH" tabindex="-1">
+  <h2 id="writeH">1. Write the lesson</h2>
+  <div class="grid">
+    <div class="field"><label for="title">Title</label><input type="text" id="title" maxlength="80"></div>
+    <div class="field"><label for="code">Lesson code (2–6 letters or digits)</label><input type="text" id="code" maxlength="6" aria-describedby="codeHint"><span id="codeHint" class="hint">Appears at the start of every progress code, e.g. FRAC-AMI-2301-K.</span></div>
+    <div class="field"><label for="lang">Language of the lesson</label><select id="lang"><option value="en">English</option><option value="es">Español</option></select></div>
+  </div>
+  <div class="field"><label for="intro">Short introduction (optional)</label><input type="text" id="intro" maxlength="160"></div>
+  <div class="grid">
+    <div class="field"><label for="smsPrefix">Word at the start of the SMS</label><input type="text" id="smsPrefix" maxlength="20"></div>
+    <div class="field"><label for="phone">Teacher phone for the SMS (optional)</label><input type="tel" id="phone" maxlength="20" aria-describedby="phoneHint"><span id="phoneHint" class="hint">Saved inside the lesson file, so everyone who receives the file can see it. Leave empty to let learners type it.</span></div>
+  </div>
+  <div id="steps"></div>
+  <div class="bar">
+    <button type="button" id="addRead" class="ghost">Add reading part</button>
+    <button type="button" id="addQ" class="ghost">Add question</button>
+  </div>
+</section>
+
+<section aria-labelledby="exportH">
+  <h2 id="exportH">2. Check and export</h2>
+  <div id="problems" aria-live="polite"></div>
+  <p id="size"></p>
+  <div class="bar">
+    <button type="button" id="preview" class="ghost">Preview as a learner</button>
+    <button type="button" id="download">Download lesson file</button>
+  </div>
+</section>
+
+<section aria-labelledby="resultsH">
+  <h2 id="resultsH">3. Read your class's progress codes</h2>
+  <p>Paste the text messages you received (any amount of text; the codes are found automatically). The lesson above must be the same lesson the learners used.</p>
+  <div class="field"><label for="sms">Text messages</label><textarea id="sms" rows="5"></textarea></div>
+  <div class="bar"><button type="button" id="decode">Show results</button></div>
+  <div id="results" aria-live="polite"></div>
+</section>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlgH">
+  <div class="bar"><strong id="dlgH">Learner preview (progress is not saved in the preview)</strong> <button type="button" id="closeDlg" class="ghost">Close preview</button></div>
+  <iframe id="frame" title="Lesson preview" sandbox="allow-scripts"></iframe>
+</dialog>
+
+<footer><p class="muted">Free and open source. Runs entirely in your browser; nothing you type is uploaded. Made for AccessED Hacks 2026.</p></footer>
+<script src="samples.js"></script>
+<script src="editor.js"></script>
+</body>
+</html>

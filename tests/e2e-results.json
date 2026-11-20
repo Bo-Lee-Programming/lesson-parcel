@@ -1,0 +1,325 @@
+{
+ "date": "2026-11-18T19:01:51.258Z",
+ "chrome": "C:/Program Files/Google/Chrome/Application/chrome.exe",
+ "results": [
+  {
+   "name": "offline: lesson opens from file with network off (6x CPU throttle)",
+   "ok": true,
+   "detail": {
+    "ms": 1511
+   }
+  },
+  {
+   "name": "offline: no network requests made",
+   "ok": true,
+   "detail": [
+    "http://127.0.0.1:18431/index.html",
+    "http://127.0.0.1:18431/parcel.js",
+    "http://127.0.0.1:18431/samples.js",
+    "http://127.0.0.1:18431/editor.js",
+    "http://127.0.0.1:18431/index.html",
+    "http://127.0.0.1:18431/parcel.js",
+    "http://127.0.0.1:18431/samples.js",
+    "http://127.0.0.1:18431/editor.js"
+   ]
+  },
+  {
+   "name": "size: lesson file under 20 KB",
+   "ok": true,
+   "detail": {
+    "bytes": 18298
+   }
+  },
+  {
+   "name": "keyboard: every control reachable with Tab (radio group = one stop)",
+   "ok": true,
+   "detail": {
+    "expected": 23,
+    "missing": []
+   }
+  },
+  {
+   "name": "keyboard: focused control has a visible outline",
+   "ok": true,
+   "detail": "solid 3px"
+  },
+  {
+   "name": "keyboard: wrong answer gives the hint for THAT option, not the answer",
+   "ok": true,
+   "detail": "Not yet. 2/3 adds 1 to the top and to the bottom. Adding does not keep the value: multiply both by the same number. You can change your answer and check again."
+  },
+  {
+   "name": "keyboard: corrected answer is accepted",
+   "ok": true,
+   "detail": "Correct. 3/6 is equal to 1/2: multiply the top and the bottom of 1/2 by 3."
+  },
+  {
+   "name": "progress bar shows 2 of 4 answered",
+   "ok": true,
+   "detail": {
+    "v": 2,
+    "max": 4,
+    "txt": "2 / 4 answered"
+   }
+  },
+  {
+   "name": "default learner is asked to add a name before sending",
+   "ok": true
+  },
+  {
+   "name": "progress code records FIRST tries (Q1 wrong=1, Q2 right=1)",
+   "ok": true,
+   "detail": "FRAC-LEA-1100-7"
+  },
+  {
+   "name": "storage: progress kept after reopening the file offline",
+   "ok": true,
+   "detail": {
+    "before": "FRAC-LEA-1100-7",
+    "after": "FRAC-LEA-1100-7"
+   }
+  },
+  {
+   "name": "shared phone: new learner starts empty with own code name, name hint hidden",
+   "ok": true,
+   "detail": {
+    "codeAmina": "FRAC-AMI-0000-3",
+    "hintHidden": true
+   }
+  },
+  {
+   "name": "shared phone: switching back restores first learner",
+   "ok": true,
+   "detail": "FRAC-LEA-1100-7"
+  },
+  {
+   "name": "display: high contrast and larger text are remembered",
+   "ok": true,
+   "detail": {
+    "hc": true,
+    "fs": "22px",
+    "pressed": "true"
+   }
+  },
+  {
+   "name": "screen reader: every control has an accessible name",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "screen reader: each question is a named group (\"Question n of N: …\")",
+   "ok": true,
+   "detail": [
+    "group: Question 1 of 4: Which fraction is equal to 1/2?",
+    "group: Question 2 of 4: Which fraction is equal to 2/5?",
+    "group: Question 3 of 4: Is 3/4 equal to 6/8?",
+    "group: Question 4 of 4: Simplify 8/12. Which fraction has the same value?"
+   ]
+  },
+  {
+   "name": "second wrong try adds the full explanation",
+   "ok": true,
+   "detail": {
+    "w1": "Not yet. That is condensation: gas turning back into liquid drops. Evaporation goes the other way. You can change your answer and check again.",
+    "w2": "Not yet. That is precipitation. Evaporation happens before any cloud forms. Evaporation is liquid water turning into a gas (water vapour), usually because of heat from the sun. You can change your answer and check again."
+   }
+  },
+  {
+   "name": "finish card appears only when all questions are answered, with first-try score",
+   "ok": true,
+   "detail": {
+    "hidden": false,
+    "score": "2 of 4 right on the first try.",
+    "btn": "Practice the ones I missed (2)"
+   }
+  },
+  {
+   "name": "practice asks exactly the missed questions and does not change the code",
+   "ok": true,
+   "detail": {
+    "prq": [
+     "Question 1 of 2: What is evaporation?",
+     "Question 2 of 2: On a cold morning, drops form on the outside of a cold cup. Which step of the cycle is this most like?"
+    ],
+    "prDone": "PracticePractice finished. Right this time: 2 of 2.Practice again",
+    "codeBefore": "WATER-LEA-1132-Q",
+    "codeAfter": "WATER-LEA-1132-Q"
+   }
+  },
+  {
+   "name": "storage blocked: learner is warned and questions still work",
+   "ok": true,
+   "detail": {
+    "warn": "This app cannot save progress here. To keep progress, open the file in your phone's browser (for example Chrome).",
+    "fbBlocked": "Correct. 3/6 is equal to 1/2: multiply the top and the bottom of 1/2 by 3."
+   }
+  },
+  {
+   "name": "language: Spanish lesson shows Spanish controls and lang=\"es\"",
+   "ok": true,
+   "detail": {
+    "lang": "es",
+    "btn": "Leer en voz alta",
+    "send": "Envía tu progreso a tu docente"
+   }
+  },
+  {
+   "name": "editor: shows exported file size",
+   "ok": true,
+   "detail": "Lesson file size: 17.9 KB (a short video lesson is usually tens of MB)."
+  },
+  {
+   "name": "editor: decodes 3 learners into a table with class % row",
+   "ok": true,
+   "detail": [
+    [
+     "Learner",
+     "Q1",
+     "Q2",
+     "Q3",
+     "Q4",
+     "Score"
+    ],
+    [
+     "LEA",
+     "✗ A",
+     "✓",
+     "–",
+     "–",
+     "1/4"
+    ],
+    [
+     "BEN",
+     "✓",
+     "✓",
+     "✓",
+     "✗ A",
+     "3/4"
+    ],
+    [
+     "CHI",
+     "✓",
+     "✗ B",
+     "✓",
+     "✓",
+     "3/4"
+    ],
+    [
+     "Class correct",
+     "67%",
+     "67%",
+     "67%",
+     "33%",
+     ""
+    ]
+   ]
+  },
+  {
+   "name": "editor: mistyped code is listed, not counted",
+   "ok": true,
+   "detail": [
+    "FRAC-ZZZ-1111-0 — has a typo (check letter does not match)"
+   ]
+  },
+  {
+   "name": "follow-up plan: groups learners by wrong answer with that answer's hint",
+   "ok": true,
+   "detail": [
+    {
+     "h": "Question 4 — 1 of 3 right first time: Simplify 8/12. Which fraction has the same value?",
+     "msgs": [
+      "Fractions Q4 (BEN): you chose \"4/8\". 4/8 takes 4 away from the top and the bottom. To simplify, divide both by the same number.",
+      "Fractions (LEA): you have not answered question 4. Finish the lesson and send your new code."
+     ]
+    },
+    {
+     "h": "Question 1 — 2 of 3 right first time: Which fraction is equal to 1/2?",
+     "msgs": [
+      "Fractions Q1 (LEA): you chose \"2/3\". 2/3 adds 1 to the top and to the bottom. Adding does not keep the value: multiply both by the same number."
+     ]
+    },
+    {
+     "h": "Question 2 — 2 of 3 right first time: Which fraction is equal to 2/5?",
+     "msgs": [
+      "Fractions Q2 (CHI): you chose \"4/5\". 4/5 doubles only the top number, so the fraction got bigger. Then press \"Practice the ones I missed\"."
+     ]
+    },
+    {
+     "h": "Question 3 — 2 of 3 right first time: Is 3/4 equal to 6/8?",
+     "msgs": [
+      "Fractions (LEA): you have not answered question 3. Finish the lesson and send your new code."
+     ]
+    }
+   ]
+  },
+  {
+   "name": "follow-up plan: every sample message fits in one SMS (160 characters)",
+   "ok": true,
+   "detail": [
+    127,
+    92,
+    143,
+    138,
+    92
+   ]
+  },
+  {
+   "name": "follow-up plan: hardest question listed first, unanswered learners get a finish reminder",
+   "ok": true,
+   "detail": [
+    "Question 4 — 1 of 3 right first time: Simplify 8/12. Which fraction has the same value?",
+    "Question 1 — 2 of 3 right first time: Which fraction is equal to 1/2?",
+    "Question 2 — 2 of 3 right first time: Which fraction is equal to 2/5?",
+    "Question 3 — 2 of 3 right first time: Is 3/4 equal to 6/8?"
+   ]
+  },
+  {
+   "name": "editor: one hint field per wrong option, labelled with that option",
+   "ok": true,
+   "detail": [
+    {
+     "id": "s2m0",
+     "label": "If a learner picks “2/3”, tell them:"
+    },
+    {
+     "id": "s2m2",
+     "label": "If a learner picks “1/4”, tell them:"
+    }
+   ]
+  },
+  {
+   "name": "editor: \"Try a lesson as a learner\" opens the preview without a storage warning",
+   "ok": true,
+   "detail": {
+    "status": "",
+    "h1": "Equivalent fractions"
+   }
+  },
+  {
+   "name": "editor: empty lesson cannot be exported and problems are listed",
+   "ok": true,
+   "detail": {
+    "disabled": true,
+    "probs": 5
+   }
+  },
+  {
+   "name": "editor screen reader: every control has an accessible name",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "name": "offline editor: builds byte-identical lessons to the published ones",
+   "ok": true
+  },
+  {
+   "name": "offline editor: downloads water-lesson.html with network off, no requests",
+   "ok": true,
+   "detail": {
+    "got": "water-lesson.html",
+    "bytes": 18793,
+    "net3": []
+   }
+  }
+ ]
+}

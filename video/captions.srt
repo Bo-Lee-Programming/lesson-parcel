@@ -1,0 +1,81 @@
+1
+00:00:00,000 --> 00:00:05,000
+A lesson cannot help someone who cannot reach it.
+
+2
+00:00:05,000 --> 00:00:11,000
+Many learners share one old phone, buy data in small bundles,
+and often have no signal at home.
+
+3
+00:00:11,000 --> 00:00:18,000
+And research shows that sending practice alone is not enough:
+learners improve when a teacher follows up.
+
+4
+00:00:18,000 --> 00:00:24,000
+Lesson Parcel does both. The teacher writes a short lesson
+in this web page.
+
+5
+00:00:24,000 --> 00:00:31,000
+For each wrong answer, they can add a hint
+about the mistake behind it.
+
+6
+00:00:31,000 --> 00:00:37,000
+Download, and the whole lesson is one file of about 18 kilobytes.
+
+7
+00:00:37,000 --> 00:00:43,000
+It goes out in the class chat or by Bluetooth.
+The learner switches on airplane mode.
+
+8
+00:00:43,000 --> 00:00:49,000
+The lesson still opens. It can read aloud,
+and several learners can share one phone.
+
+9
+00:00:49,000 --> 00:00:57,000
+A wrong answer gets the hint for that exact answer,
+not the solution. The explanation comes after a second try.
+
+10
+00:00:57,000 --> 00:01:04,000
+At the end: a first-try score,
+and practice for the questions they missed.
+
+11
+00:01:04,000 --> 00:01:10,000
+High contrast and larger text are one tap away,
+and the lesson is built for keyboards and screen readers.
+
+12
+00:01:10,000 --> 00:01:18,000
+Then the learner gets a short code
+and sends it by plain SMS. No data needed.
+
+13
+00:01:18,000 --> 00:01:25,000
+The teacher pastes the messages. Typos are caught,
+and the class table shows what was hard.
+
+14
+00:01:25,000 --> 00:01:36,000
+Then the follow-up plan: learners grouped by the wrong answer
+they chose, each group with a one-SMS message about its own mistake.
+
+15
+00:01:36,000 --> 00:01:44,000
+Copy, send, done. The teacher knows whom to help,
+and with what.
+
+16
+00:01:44,000 --> 00:01:52,000
+Lesson Parcel: one lesson, one tiny file,
+and a way back to the teacher.
+
+17
+00:01:52,000 --> 00:01:58,000
+Free, open source, and tested offline.
